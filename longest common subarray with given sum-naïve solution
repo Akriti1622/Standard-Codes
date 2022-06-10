@@ -1,0 +1,33 @@
+//longest common subarray with given sum - naïve solution
+//two binary arrays are given with same size
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int longestCommon(int a[], int b[], int n)
+{
+    int res=0;
+    for(int i=0;i<n;i++)
+    {
+        int cs1=0, cs2=0;
+        for(int j=i;j<n;j++)
+        {
+            cs1+=a[j];
+            cs2+=b[j];
+            if(cs1==cs2)
+                res=max(res, (j-i+1));
+        }
+    }
+    return res;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int a[n], b[n];
+    for(int i=0;i<n;i++)
+    cin>>a[i];
+    for(int i=0;i<n;i++)
+    cin>>b[i];
+    cout<<longestCommon(a, b, n)<<endl;
+}
