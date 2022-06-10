@@ -1,0 +1,30 @@
+//subarray with given sum - naive solution
+
+#include<bits/stdc++.h>
+using namespace std;
+
+bool inter(int arr[], int n, int sum)
+{
+    for(int i=0;i<n;i++)
+    {
+        int curr_sum=0;
+        for(int j=i;j<n;j++)
+        {
+            curr_sum+=arr[j];
+            if(curr_sum==sum)
+                return true;
+        }
+    }
+    return false;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++)
+    cin>>a[i];
+    int sum;
+    cin>>sum;
+    cout<<inter(a, n, sum)<<endl;
+}
