@@ -1,4 +1,4 @@
-//longest consecutive subsequence - efficient solution
+//count distinct elements in every window - efficient solution
 
 #include<bits/stdc++.h>
 using namespace std;
