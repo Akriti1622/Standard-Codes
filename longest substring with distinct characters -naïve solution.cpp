@@ -17,7 +17,7 @@ int longestDistinct(string &str)
 {
     int n=str.length(), res=0;
     for(int i=0;i<n;i++)
-        for(int j=0;j<n;j++)
+        for(int j=i;j<n;j++)
             if(areDistinct(str, i, j))
                 res=max(res, j-i+1);
     return res;
